@@ -1,9 +1,23 @@
 > [!WARNING]
 > This is a low-effort Firefox port using Manifest v2, created with GitHub Copilot.
-
 # CSES Helper
 ![](https://img.shields.io/chrome-web-store/users/ncenmkbjgidphaobkklmhhgnakcgmghi)
 ![](https://img.shields.io/chrome-web-store/rating/ncenmkbjgidphaobkklmhhgnakcgmghi)
+
+# Manual install in FireFox
+To install the extension manually:
+
+1. **Firefox Developer Edition, Nightly, or ESR**:
+   - Open Firefox and navigate to `about:addons`.
+   - Click on the gear icon and select `Install Add-on From File...`.
+   - Choose the downloaded extension file and install it.
+
+2. **Other versions of Firefox (Temporary)**:
+   - Open Firefox and navigate to `about:debugging`.
+   - Click on `This Firefox`.
+   - Click on `Load Temporary Add-on...`.
+   - Choose the downloaded extension file and install it.
+
 
 ## Introduction
 A browser extension that improve user experience on CSES Online Judge.
