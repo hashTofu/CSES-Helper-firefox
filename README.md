@@ -1,5 +1,5 @@
 > [!WARNING]
-> This is a low-effort firefox port made with GitHub Copilot
+> This is a low-effort(literally none) Firefox port using Manifest v2, created with GitHub Copilot.
 
 # CSES Helper
 ![](https://img.shields.io/chrome-web-store/users/ncenmkbjgidphaobkklmhhgnakcgmghi)
