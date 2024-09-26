@@ -146,19 +146,26 @@ const submitCodeFile = (fileData) => {
     formData.append('csrf_token', csrfToken);
     formData.append('task', problemId);
     formData.append('lang', languageSelector.value);
-    if (!languageOption.disabled) formData.append('option', languageOption.value);
+    if (!languageOption.disabled) {
+        formData.append('option', languageOption.value);
+    }
     formData.append('target', 'problemset');
     formData.append('type', 'course');
     formData.append('file', fileData, 'code.cpp');
-    fetch('/course/send.php', {
+    const url = 'https://cses.fi/course/send.php';
+    fetch(url, {
         method: 'POST',
         body: formData
-    }).then((response) => {
+    })
+    .then((response) => {
         if (response.ok) {
             location.href = response.url;
+        } else {
+            throw new Error('Network response was not ok');
         }
-    }).catch((error) => {
-        console.error('Error:', error);
+    })
+    .catch((error) => {
+        console.error('Error during file submission:', error);
     });
 };
 
