@@ -12,7 +12,7 @@ const getTips = (problemId) =>
     getFileFromGithub("https://raw.githubusercontent.com/dada878/CSES-Helper/master/database/tips.json")
         .then(tipsData => tipsData[problemId]);
 
-chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
+browser.runtime.onMessage.addListener((request, sender, sendResponse) => {
     if (request.command === "fetch-tags") {
         getTags(request.problemId).then((tags) => {
             sendResponse({

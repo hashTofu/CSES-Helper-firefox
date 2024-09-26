@@ -1,11 +1,11 @@
 {
-  "manifest_version": 3,
+  "manifest_version": 2,
   "name": "CSES Helper",
   "description": "Tools for CSES Online Judge",
   "homepage_url": "https://github.com/dada878",
   "version": "0.0.7",
   "author": "Dada878",
-  "action": {
+  "browser_action": {
     "default_icon": "assets/favicon.png",
     "default_popup": "popup.html"
   },
@@ -16,9 +16,7 @@
     "128": "assets/icon128.png"
   },
   "permissions": [
-    "storage"
-  ],
-  "host_permissions": [
+    "storage",
     "https://cses.fi/*",
     "https://github.com/dada878/CSES-Helper/*"
   ],
@@ -35,9 +33,13 @@
     }
   ],
   "background": {
-    "service_worker": "./scripts/background.js"
+    "scripts": ["./scripts/background.js"]
   },
-  "content_security_policy": {
-    "extension_pages": "default-src 'self'; connect-src https://* data: blob: filesystem:;"
+  "content_security_policy": "script-src 'self' https://*; object-src 'self';",
+  "applications": {
+    "gecko": {
+      "id": "cses-helper@dada878.com",
+      "strict_min_version": "42.0"
+    }
   }
 }

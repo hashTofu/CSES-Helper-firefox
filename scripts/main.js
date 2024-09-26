@@ -1,7 +1,6 @@
 if (typeof browser === "undefined") var browser = chrome;
 
-const chromeStorage = chrome.storage.local;
-
+const browserStorage = browser.storage.local;
 
 const problemId = document.querySelector(".nav").children[0].firstChild.href.split("/").at(-2);
 const navbarElement = document.querySelector(".nav");
@@ -116,7 +115,7 @@ const loadLanguageSelectorCache = () => {
     const languageSelector = document.getElementById("lang");
     const languageOption = document.getElementById("option");
 
-    chromeStorage.get(["language", "option"]).then((result) => {
+    browserStorage.get(["language", "option"]).then((result) => {
         setTimeout(() => {
             if (result.language) languageSelector.value = result.language;
             languageSelector.dispatchEvent(new Event('change'));
@@ -132,10 +131,10 @@ const createLanguageSelectorCache = () => {
     const languageSelector = document.getElementById("lang");
     const languageOption = document.getElementById("option");
     languageSelector.addEventListener("change", () => {
-        chromeStorage.set({ language: languageSelector.value });
+        browserStorage.set({ language: languageSelector.value });
     });
     languageOption.addEventListener("change", () => {
-        chromeStorage.set({ option: languageOption.value });
+        browserStorage.set({ option: languageOption.value });
     });
 }
 
@@ -276,10 +275,10 @@ const createCustomSortSelector = () => {
             } else if (selector.value == "Sort By Number of Solvers") {
                 sortBySolvers(index);
             }
-            chromeStorage.get("sort-rule", (result) => {
+            browserStorage.get("sort-rule").then((result) => {
                 const sortRule = result["sort-rule"] ?? {};
                 sortRule[index] = selector.value;
-                chromeStorage.set({ "sort-rule": sortRule });
+                browserStorage.set({ "sort-rule": sortRule });
             });
         }
         selector.addEventListener("change", () => sortProblems());
@@ -290,7 +289,7 @@ const createCustomSortSelector = () => {
 
 const applySortRule = () => {
     const titleList = [...document.querySelectorAll("h2")];
-    chromeStorage.get("sort-rule", (result) => {
+    browserStorage.get("sort-rule").then((result) => {
         const sortRule = result["sort-rule"] ?? {};
         titleList.shift();
         titleList.forEach((element, index) => {

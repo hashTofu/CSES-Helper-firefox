@@ -1,3 +1,6 @@
+> [!WARNING]
+> This is a low-effort firefox port made with GitHub Copilot
+
 # CSES Helper
 ![](https://img.shields.io/chrome-web-store/users/ncenmkbjgidphaobkklmhhgnakcgmghi)
 ![](https://img.shields.io/chrome-web-store/rating/ncenmkbjgidphaobkklmhhgnakcgmghi)
