@@ -4,7 +4,7 @@
 ![](https://img.shields.io/chrome-web-store/users/ncenmkbjgidphaobkklmhhgnakcgmghi)
 ![](https://img.shields.io/chrome-web-store/rating/ncenmkbjgidphaobkklmhhgnakcgmghi)
 
-# Manual install in FireFox
+## Manual Install in FireFox
 To install the extension manually:
 
 1. **Firefox Developer Edition, Nightly, or ESR**:
